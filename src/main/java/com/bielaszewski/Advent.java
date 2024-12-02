@@ -5,7 +5,9 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 public class Advent {
     public static String read(String file) {
@@ -15,5 +17,9 @@ public class Advent {
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static Stream<String> splitLines(String input) {
+        return Arrays.stream(input.split("\r\n"));
     }
 }
