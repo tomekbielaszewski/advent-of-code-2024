@@ -116,6 +116,23 @@ public class Day4 implements Advent.OfCode {
 
     @Override
     public int solve2(String input) {
-        return 0;
+        String[] lines = Advent.splitLines(input).toArray(String[]::new);
+        int counter = 0;
+        for (int y = 0; y < lines.length; y++) {
+            char[] line = lines[y].toCharArray();
+            for (int x = 0; x < line.length; x++) {
+                boolean found = false;
+                if (checkAt('A', x, y, lines)) {
+                    found = (checkAt('M', x-1,y-1, lines) && checkAt('S', x+1,y+1, lines) ||
+                            checkAt('S', x-1,y-1, lines) && checkAt('M', x+1,y+1, lines)) &&
+                            (checkAt('M', x-1,y+1, lines) && checkAt('S', x+1,y-1, lines) ||
+                                    checkAt('S', x-1,y+1, lines) && checkAt('M', x+1,y-1, lines));
+                }
+                if (found) {
+                    counter++;
+                }
+            }
+        }
+        return counter;
     }
 }

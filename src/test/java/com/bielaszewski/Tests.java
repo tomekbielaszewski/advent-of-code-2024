@@ -16,7 +16,7 @@ public class Tests {
             11, 31,   //day 1
             2, 4,     //day 2
             161, 48,  //day 3
-            18, 0,    //day 4
+            18, 9,    //day 4
     };
 
     private String[] inputs = new String[]{
