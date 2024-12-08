@@ -2,7 +2,7 @@ package com.bielaszewski;
 
 import java.util.*;
 
-public class Day1 {
+public class Day1 implements Advent.OfCode {
     public int solve1(String input) {
         List<Integer> left = new ArrayList<>();
         List<Integer> right = new ArrayList<>();

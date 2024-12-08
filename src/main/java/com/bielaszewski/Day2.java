@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Day2 {
+public class Day2 implements Advent.OfCode {
     public int solve1(String input) {
         List<List<Integer>> reports = Advent.splitLines(input)
                 .map(l -> Arrays.stream(l.split(" "))

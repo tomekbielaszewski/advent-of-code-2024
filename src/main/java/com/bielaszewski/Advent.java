@@ -10,10 +10,19 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 public class Advent {
+    public interface OfCode {
+        int solve1(String input);
+
+        int solve2(String input);
+    }
+
     public static String read(String file) {
-        URL day1input = Advent.class.getClassLoader().getResource(file);
+        URL input = Advent.class.getClassLoader().getResource(file);
+        if (input == null) {
+            throw new IllegalStateException("You've forgot to create the input file: " + file);
+        }
         try {
-            return Files.readString(Paths.get(Objects.requireNonNull(day1input).toURI()));
+            return Files.readString(Paths.get(Objects.requireNonNull(input).toURI()));
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
