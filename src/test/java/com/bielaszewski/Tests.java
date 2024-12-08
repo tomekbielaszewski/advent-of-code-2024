@@ -9,18 +9,21 @@ public class Tests {
             new Day1(),
             new Day2(),
             new Day3(),
+            new Day4(),
     };
 
     private int[] expectedTestResults = new int[]{
-            11, 31, //day 1
-            2, 4,   //day 2
-            161, 48  //day 3
+            11, 31,   //day 1
+            2, 4,     //day 2
+            161, 48,  //day 3
+            18, 0,    //day 4
     };
 
     private String[] inputs = new String[]{
             "day1test1", "day1test1", "day1input", //day 1
             "day2test1", "day2test1", "day2input", //day 2
             "day3test1", "day3test2", "day3input", //day 3
+            "day4test1", "day4test1", "day4input", //day 4
     };
 
     @Test
@@ -35,7 +38,7 @@ public class Tests {
 
             String input = Advent.read(inputs[i * 3 + 2]);
             int result1 = day.solve1(input);
-            System.out.printf("First star of Day %d is: %d\n", i + 1, result1);
+            System.out.printf("Day %d! First star! --> %d\n", i + 1, result1);
 
             String testInput2 = Advent.read(inputs[i * 3 + 1]);
             int testResult2 = day.solve2(testInput2);
@@ -43,7 +46,7 @@ public class Tests {
             assertEquals(expectedTestResult2, testResult2, String.format("Result of 2nd test on Day %d is incorrect. Expected: %d, Actual %d", i + 1, expectedTestResult2, testResult2));
 
             int result2 = day.solve2(input);
-            System.out.printf("Second star of Day %d is: %d\n", i + 1, result2);
+            System.out.printf("Day %d! Second star! --> %d\n", i + 1, result2);
         }
     }
 }
